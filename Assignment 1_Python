@@ -1,0 +1,139 @@
+# Task 1
+
+''' 1. Problem statement
+Write a program which will find all such numbers which are divisible by 7 but are not a multiple of 5, between 2000 and 3200 (both 
+included). The numbers obtained should be printed in a comma-separated sequence on a single line
+'''
+
+
+def program_1():
+    required_numbers = []
+    print('Output of Task_1, Problem_statement_1 is = ', end='')
+    for no in range(2000, 3200):
+        if no % 7 == 0 and no % 5 != 0:
+            required_numbers.append(no)
+
+    return required_numbers
+
+
+print(program_1())
+
+'''2. Problem statement
+Write a Python program to accept the user's first and last name and then getting them printed in the the reverse order
+with a space between first name and last name.
+'''
+
+
+def reverse_user_input():
+    print('')  # Just giving a line gap between outputs of 2 programs as no functional use
+    print('Output of Task_1, Problem_statement_2 starts from here ')
+    first_name = input("Enter your first name ")
+    last_name = input("Enter your last name ")
+    print(f"Your name is reverse order is:  {first_name[::-1]} {(last_name)[::-1]}")
+    # or
+    print(f" or Your name is reverse order is: {(last_name)[::-1]} {first_name[::-1]}")
+
+
+reverse_user_input()
+
+'''3. Problem statement
+Write a Python program to find the volume of a sphere with diameter 12 cm. Formula: V=4/3 * π * r 3
+'''
+import math
+
+
+def volume_of_sphere():
+    diameter = 12
+    radius = diameter / 2
+    pi = math.pi
+    sphere_volume = (4 / 3) * pi * (radius ** 3)
+    return sphere_volume
+
+
+print('')
+print('Output of Task_1, Problem_statement_3 starts from here ')
+print(f'Volume of sphere having diameter 12cm is {volume_of_sphere()}cm')
+
+# Task 2
+''' 1. Problem statement
+Write a program which accepts a sequence of comma-separated numbers from console and generate a list.
+'''
+
+
+def user_ip_to_list():
+    print('')  # Just giving a line gap between outputs of 2 programs as no functional use
+    print('Output of Task_2, Problem_statement_1 starts from here ')
+    user_input = input('Enter any sequence seperated by commas: ')
+    user_input = user_input.split(',')
+    print(f' data type of user input is {type(user_input)} and list is {user_input}')
+
+
+user_ip_to_list()
+
+''' 2. Problem Statement
+Create the below pattern using nested for loop in Python.
+*
+* *
+* * *
+* * * *
+* * * * *
+* * * *
+* * *
+* *
+*
+'''
+
+
+# Method 1 using nested for loop
+def pattern_using_nested_for():
+    print('')
+    print('Output of Task_2, Problem_statement_2 by Method_1 starts from here ')
+    for i in range(1, 6):
+        for j in range(0, i):
+            print('*', end="")
+        print('')
+        if i == 5:
+            while i > 1:
+                i -= 1
+                print('*' * i)
+                continue
+
+
+pattern_using_nested_for()
+
+
+# Method 2 using without nested for loop
+def pattern_wo_nested_for():
+    print('')
+    print('Output of Task_2, Problem_statement_2 Method_2 starts from here ')
+    pattern_format = '*'
+    for no in range(1, 7):
+        if no <= 5:
+            print(no * pattern_format)
+            no += 1
+        else:
+            no -= 1
+            while no > 1:
+                no -= 1
+                print(no * pattern_format)
+                continue
+    return
+
+
+pattern_wo_nested_for()
+
+''' 3. Problem Statement
+Write a Python program to reverse a word after accepting the input from the user.
+'''
+
+
+def reverse_input_word():
+    print('')
+    print('Output of Task_2, Problem_statement_3 starts from here ')
+    user_input = input('Enter any input: ')
+    print(f'Input word: {user_input}')
+    user_output = user_input[::-1]
+    print(f'Output: {user_output}')
+
+
+reverse_input_word()
